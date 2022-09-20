@@ -23,8 +23,7 @@ public class ModelImplementation extends SQLAccess implements Modelable {
     @Override
     public Account[] checkAccount(Customer pCustomer) {
         ResultSet rs;
-        ArrayList<Account> accounts = new ArrayList<>;
-        String sacarCuentas= "select * from account a,customer_account ca where ca.customers_id=?";
+        /*        ArrayList<Account> accounts = new ArrayList<>;*/        String sacarCuentas= "select * from account a,customer_account ca where ca.customers_id=?";
         return null;
     }
 
