@@ -3,7 +3,7 @@ package model;
 import obj.*;
 
 public interface Modelable {
-    /**Stores a new customer in the databse. */
+    /**Stores a new customer in the databse.*/
     public void createCustomer(Customer pCustomer);
     /**Use an object to send the data and check if the
      * Customer is or not stored in the database.
@@ -13,11 +13,12 @@ public interface Modelable {
     Account is or not stored in the database.
     */
 
-
-    public Account [] checkAccount(Customer pCustomer);
     /**Input a Customer, the function returns an array
      * of all the account of the Customer. (null if none)
      */
+    public Account [] checkAccount(Customer pCustomer);
+    /**Maybe it's unnecesary, idk.
+    */
     public Account checkDataAccount(Account pAccount);
 
 
