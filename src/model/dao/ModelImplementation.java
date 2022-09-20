@@ -1,9 +1,11 @@
 package model.dao;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import model.Modelable;
 import obj.*;
 
-public class ModelImplementation implements Modelable {
+public class ModelImplementation extends SQLAccess implements Modelable {
 
     @Override
     public void createCustomer(Customer pCustomer) {
@@ -20,7 +22,9 @@ public class ModelImplementation implements Modelable {
 
     @Override
     public Account[] checkAccount(Customer pCustomer) {
-        // TODO Auto-generated method stub
+        ResultSet rs;
+        ArrayList<Account> accounts = new ArrayList<>;
+        String sacarCuentas= "select * from account a,customer_account ca where ca.customers_id=?";
         return null;
     }
 
