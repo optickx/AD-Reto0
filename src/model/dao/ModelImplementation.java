@@ -9,7 +9,7 @@ public class ModelImplementation extends SQLAccess implements Modelable {
 
     @Override
     public void createCustomer(Customer pCustomer) {
-        // TODO Auto-generated method stub new stuff
+        // TODO Auto-generated method stub  new stuff
         
         
     }
