@@ -8,7 +8,7 @@ public interface Modelable {
     /**Use an object to send the data and check if the
      * Customer is or not stored in the database.
      */
-    public Customer checkDataCustomer(Customer pCustomer);
+    public Customer checkDataCustomer(Integer pId);
     /**Use an object to send the data and checj if the
     Account is or not stored in the database.
     */

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SQLAccess {
-    private Connection con;
+    public Connection con;
     // access to the database access credentials.
     private final ResourceBundle config = 
         ResourceBundle.getBundle("resources.database_access");
