@@ -1,6 +1,5 @@
 package model.dao;
 
-import java.io.ObjectInputStream.GetField;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,6 +8,7 @@ import java.util.ResourceBundle;
 
 public class SQLAccess {
     private Connection con;
+    private ResultSet rs;
     // access to the database access credentials.
     private final ResourceBundle config = 
         ResourceBundle.getBundle("resources.database_access");

@@ -3,7 +3,7 @@ package model.dao;
 import model.Modelable;
 import obj.*;
 
-public class ModelImplementation implements Modelable {
+public class ModelImplementation extends SQLAccess implements Modelable {
 
     @Override
     public void createCustomer(Customer pCustomer) {
