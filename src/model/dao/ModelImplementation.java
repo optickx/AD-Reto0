@@ -1,7 +1,6 @@
 package model.dao;
 
 import java.sql.ResultSet;
-import obj.AccountType;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,6 +8,12 @@ import model.Modelable;
 import obj.*;
 
 public class ModelImplementation extends SQLAccess implements Modelable {
+    private PreparedStatement stmt= null;
+
+    @Override
+    public void createCustomer(Customer pCustomer) {
+        // TODO Auto-generated method stub
+    }
 
     @Override
     public Customer checkDataCustomer(Integer pID) {
@@ -31,15 +36,18 @@ public class ModelImplementation extends SQLAccess implements Modelable {
             stmt.setString(1, pCustomer.getID().toString());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                account = new Account(rs.getInt("a.id"),
+                account = new Account(
+                        rs.getInt("a.id"),
                         rs.getString("a.description"),
                         rs.getDouble("a.balance"),
                         rs.getDouble("a.creditLine"),
                         rs.getDouble("a.beginBalance"),
                         rs.getDate("a.beginBalanceTimestamp").toLocalDate(),
-                        rs.getInt("a.type"));
+                        new AccountType()); // TODO: still to fix it.
                 pCustomer.getCuentas().add(account);
             }
+
+            
             
         } catch (SQLException e) {
         }
@@ -52,15 +60,17 @@ public class ModelImplementation extends SQLAccess implements Modelable {
     }
 
     @Override
-    public void addMovement(Movement pMovement) {
+    public void createMovement(Movement pMovement) {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public Movement[] checkMovement(Account pAccount) {
+    public Movement[] checkDataMovement(Account pAccount) {
         // TODO Auto-generated method stub
         return null;
     }
+
+
 
 }
