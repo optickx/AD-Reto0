@@ -15,7 +15,7 @@ public class Account {
     public Account(Integer pID) {
         ID = pID;
     }
-
+    
     public Account(
     Integer pID, String pDescription, Double pBalance, Double pCreditLine, 
     Double pBeginBalance, LocalDate pBeginBalanceTimestamp, AccountType pType) {

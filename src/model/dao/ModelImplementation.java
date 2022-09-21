@@ -1,17 +1,21 @@
 package model.dao;
 
 import java.sql.ResultSet;
+import obj.AccountType;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Modelable;
 import obj.*;
 
 public class ModelImplementation extends SQLAccess implements Modelable {
 
+    private PreparedStatement stmt;
+
     @Override
     public void createCustomer(Customer pCustomer) {
         // TODO Auto-generated method stub  new stuff
-        
-        
+
     }
 
     @Override
@@ -21,10 +25,28 @@ public class ModelImplementation extends SQLAccess implements Modelable {
     }
 
     @Override
-    public Account[] checkAccount(Customer pCustomer) {
+    public void checkAccount(Customer pCustomer) {
         ResultSet rs;
-        /*        ArrayList<Account> accounts = new ArrayList<>;*/        String sacarCuentas= "select * from account a,customer_account ca where ca.customers_id=?";
-        return null;
+        Account account = null;
+        String sacarCuentas = "select a.* from account a,customer_account ca where ca.customers_id=?";
+        try {
+            openConnection();
+            stmt = con.prepareStatement(sacarCuentas);
+            stmt.setString(1, pCustomer.getID().toString());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                account = new Account(rs.getInt("a.id"),
+                        rs.getString("a.description"),
+                        rs.getDouble("a.balance"),
+                        rs.getDouble("a.creditLine"),
+                        rs.getDouble("a.beginBalance"),
+                        rs.getDate("a.beginBalanceTimestamp").toLocalDate(),
+                        rs.getInt("a.type"));
+                pCustomer.getCuentas().add(account);
+            }
+            
+        } catch (SQLException e) {
+        }
     }
 
     @Override
@@ -36,7 +58,7 @@ public class ModelImplementation extends SQLAccess implements Modelable {
     @Override
     public void addMovement(Movement pMovement) {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
@@ -44,5 +66,5 @@ public class ModelImplementation extends SQLAccess implements Modelable {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
 }
