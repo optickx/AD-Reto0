@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import obj.*;
 
 public interface Modelable {
@@ -16,7 +17,7 @@ public interface Modelable {
     /**Input a Customer, the function returns an array
      * of all the account of the Customer. (null if none)
      */
-    public Account [] checkAccount(Customer pCustomer);
+    public void checkAccount(Customer pCustomer);
     /**Maybe it's unnecesary, idk.
     */
     public Account checkDataAccount(Account pAccount);
