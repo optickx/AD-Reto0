@@ -10,17 +10,13 @@ import obj.*;
 
 public class ModelImplementation extends SQLAccess implements Modelable {
 
-    private PreparedStatement stmt;
-
     @Override
-    public void createCustomer(Customer pCustomer) {
-        // TODO Auto-generated method stub  new stuff
-
-    }
-
-    @Override
-    public Customer checkDataCustomer(Customer pCustomer) {
-        // TODO Auto-generated method stub
+    public Customer checkDataCustomer(Integer pID) {
+        ResultSet rs = null;
+        Customer pCustomer;
+        
+        String checkDataCustomer = "SELECT * FROM CUSTOMER WHERE ID = ?";
+        
         return null;
     }
 
