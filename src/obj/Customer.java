@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    private final Integer ID;
+    private Integer ID;
     private String firstName;
     private String lastName;
     private String middleInitial;
@@ -48,44 +48,38 @@ public class Customer {
     public Integer getID() {
         return ID;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public String getMiddleInitial() {
         return middleInitial;
     }
-
     public String getStreet() {
         return street;
     }
-
     public String getCity() {
         return city;
     }
-
     public String getState() {
         return state;
     }
-
     public Integer getZip() {
         return zip;
     }
-
     public Integer getPhone() {
         return phone;
     }
-
     public String getEmail() {
         return email;
     }
 
     // Setters.
+    public void setID(Integer pID) {
+        ID = pID;
+    }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

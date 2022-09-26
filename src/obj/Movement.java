@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Movement {
     
-    private final Integer ID;
+    private Integer ID;
     private LocalDate timestamp;
     private double amount;
     private double balance;
@@ -42,6 +42,9 @@ public class Movement {
     }
 
     // Setters.
+    public void setID(Integer pID) {
+        ID = pID;
+    }
     public void setTImestamp(LocalDate pTimestamp) {
         timestamp = pTimestamp;
     }
