@@ -1,2 +1,6 @@
+*.xml
+*.mf
+
 .vscode/
 sql/
+nbproject/*
