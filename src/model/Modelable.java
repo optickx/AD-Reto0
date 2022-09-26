@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import obj.*;
 
 public interface Modelable {
@@ -8,7 +9,7 @@ public interface Modelable {
     /**Use an object to send the data and check if the
      * Customer is or not stored in the database.
      */
-    public Customer checkDataCustomer(Customer pCustomer);
+    public Customer checkDataCustomer(Integer pID);
     /**Use an object to send the data and checj if the
     Account is or not stored in the database.
     */
@@ -16,7 +17,7 @@ public interface Modelable {
     /**Input a Customer, the function returns an array
      * of all the account of the Customer. (null if none)
      */
-    public Account [] checkAccount(Customer pCustomer);
+    public void checkAccount(Customer pCustomer);
     /**Maybe it's unnecesary, idk.
     */
     public Account checkDataAccount(Account pAccount);
@@ -25,9 +26,9 @@ public interface Modelable {
     /**Input a movement and it will be stored in the
      * database. YOU HAVE TO CHECK THE ACCOUNT.
      */
-    public void addMovement(Movement pMovement);
+    public void createMovement(Movement pMovement);
     /**Use an object to send the data and check if the
     Movement is or not stored in the database.
     */
-    public Movement [] checkMovement(Account pAccount);
+    public Movement [] checkDataMovement(Account pAccount);
 }

@@ -1,7 +1,7 @@
 package obj;
 
 public class AccountType {
-    enum Account {
+    public static enum Account {
         STANDARD,
         CREDIT   
     }

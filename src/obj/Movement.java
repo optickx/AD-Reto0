@@ -23,4 +23,35 @@ public class Movement {
         balance = pBalance;
         description = pDescription;
     }    
+
+    // Getters.
+    public Integer getID() {
+        return ID;
+    }
+    public LocalDate getTimestamp() {
+        return timestamp;
+    }
+    public double getAmount() {
+        return amount;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    // Setters.
+    public void setTImestamp(LocalDate pTimestamp) {
+        timestamp = pTimestamp;
+    }
+    public void setAmount(double pAmount) {
+        amount = pAmount;
+    }
+    public void setBalance(double pBalance) {
+        balance = pBalance;
+    }
+    public void setDescription(String pDescription) {
+        description = pDescription;
+    }
 }
