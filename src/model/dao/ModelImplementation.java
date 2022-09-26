@@ -1,7 +1,7 @@
 package model.dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,4 +75,11 @@ public class ModelImplementation extends SQLAccess implements Modelable {
             Logger.getLogger(ModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+}
+
+    @Override
+    public Movement[] checkDataMovement(Account pAccount) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
